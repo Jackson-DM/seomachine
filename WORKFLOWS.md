@@ -119,3 +119,75 @@ Improve an existing blog draft by strengthening SEO performance, clarity, and st
 - Check word count if needed using PowerShell:
 ```powershell
 (Get-Content 'rewrites/ai-consulting-for-small-business.md' | Measure-Object -Word).Words
+
+---
+
+## Workflow #3: Content Repurposing & Scale
+
+### Goal
+Maximize the value of a single blog post by repurposing it into multiple SEO and marketing assets using AI-assisted transformation.
+
+---
+
+### Inputs
+- Final blog draft (original or rewritten)  
+  Example:
+  - `rewrites/ai-consulting-for-small-business.md`
+
+---
+
+### Tools Used
+- Cursor (AI-assisted content transformation)
+- Markdown
+
+---
+
+### Step-by-Step Process
+
+#### 1. Source Content Selection
+- Choose a finalized blog post
+- Confirm content is:
+  - Accurate
+  - Clear
+  - Aligned with business goals
+
+---
+
+#### 2. AI-Assisted Repurposing
+Use the blog as context to generate derivative assets such as:
+- FAQ section for SEO
+- Short-form social media posts
+- Email newsletter summary
+- Landing page copy
+- Sales or service page snippets
+
+Each output focuses on a **specific channel or intent**, not generic reuse.
+
+---
+
+#### 3. Asset Organization
+- Save repurposed outputs into appropriate folders, such as:
+  - `output/`
+  - `published/`
+- Clearly label files based on usage and channel
+
+---
+
+### Final Outputs
+- Multiple content assets derived from one blog
+- Consistent messaging across platforms
+- Increased content ROI with minimal extra effort
+
+---
+
+### Why This Workflow Matters
+- Scales content production efficiently
+- Reduces redundant writing
+- Aligns marketing and SEO efforts
+- Demonstrates clear AI leverage for clients
+
+---
+
+### Status
+⬜ Not yet implemented  
+🔜 Ready for execution using existing blog content
