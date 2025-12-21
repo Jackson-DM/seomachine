@@ -63,3 +63,59 @@ Create a high-quality, SEO-optimized blog post for small business audiences usin
 - Check word count using PowerShell:
   ```powershell
   (Get-Content 'drafts/ai-consulting-for-small-business.md' | Measure-Object -Word).Words
+
+---
+
+## Workflow #2: SEO Optimization & Content Rewrite
+
+### Goal
+Improve an existing blog draft by strengthening SEO performance, clarity, and structure without rewriting from scratch.
+
+---
+
+### Inputs
+- Existing blog draft  
+  Example:
+  - `drafts/ai-consulting-for-small-business.md`
+- SEO research file (optional but recommended)  
+  Example:
+  - `research/ai-consulting-research.md`
+
+---
+
+### Tools Used
+- Cursor (AI-assisted rewriting)
+- Markdown
+- PowerShell (word count validation)
+
+---
+
+### Step-by-Step Process
+
+#### 1. Draft Review
+- Review the existing blog draft
+- Identify:
+  - Redundant sections
+  - Weak SEO headings
+  - Areas needing clearer explanations
+
+---
+
+#### 2. AI-Assisted Rewrite
+- Use the existing draft and research as context
+- Rewrite content to:
+  - Improve keyword placement
+  - Tighten language
+  - Enhance H2/H3 structure
+  - Maintain original intent
+
+📄 Output:
+- `rewrites/ai-consulting-for-small-business.md`
+
+---
+
+#### 3. Quality Control
+- Verify clarity and SEO structure
+- Check word count if needed using PowerShell:
+```powershell
+(Get-Content 'rewrites/ai-consulting-for-small-business.md' | Measure-Object -Word).Words
