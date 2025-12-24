@@ -191,3 +191,30 @@ Each output focuses on a **specific channel or intent**, not generic reuse.
 ### Status
 Status: Implemented and validated  
 Notes: Executed using rewrites/ai-consulting-for-small-businesses.md as source, producing FAQ and social snippet assets.
+
+---
+
+## Scaling Notes & Future Extensions
+
+These workflows are designed to scale both **content quality** and **content quantity** as input volume increases.
+
+### Quality Scaling
+- Dedicated workflows separate concerns (research, drafting, rewriting, repurposing), improving output clarity and consistency.
+- SEO optimization is handled after ideation, allowing for stronger structure and intent alignment.
+- Repurposing workflows reinforce messaging by reusing validated content rather than generating from scratch.
+
+### Quantity Scaling
+- One primary blog post can generate multiple downstream assets:
+  - FAQ sections for SEO and objections
+  - Social snippets for distribution and awareness
+  - (Future) email sequences, landing pages, or sales enablement content
+- This reduces marginal content cost per asset.
+
+### Future Extensions
+- Specialized Claude/Cursor agents per workflow (research-only, rewrite-only, repurpose-only)
+- Batch processing of multiple topics using the same workflows
+- Automated handoff between folders (research → drafts → rewrites → repurposed)
+- Integration with publishing or CMS tools
+
+These workflows can be used independently or chained together depending on client needs.
+
