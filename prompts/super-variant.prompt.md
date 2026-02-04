@@ -1,3 +1,6 @@
+> STATUS: Locked (validated on 2026-02-03)
+> Do not modify without re-running evaluation comparison.
+
 # Super Variant Prompt Template
 
 ## Role

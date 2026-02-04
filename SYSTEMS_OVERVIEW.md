@@ -221,6 +221,31 @@ This repo currently supports Monday + Wednesday workflows.
 
 ---
 
+## Super Variant Workflow
+
+Purpose:
+Turn a single evaluated content source into multiple
+brand-aligned distribution-ready variants.
+
+Inputs:
+- Canonical content
+- Brand voice (SKILL / brand-voice)
+- Phase 2 evaluation output
+
+Process:
+1. Use `prompts/super-variant.prompt.md`
+2. Fill in bracketed sections using evaluation + canonical content
+3. Generate one bundle per brand
+4. Save to `/outputs/{month}/{brand}/super_variants/{topic}/`
+
+Outputs:
+- Founder LinkedIn (strategic)
+- Operator LinkedIn (tactical)
+- SEO blog outline + intro
+- Email newsletter draft
+
+---
+
 ## What This Repo Does NOT Do (By Design)
 
 - No auto-posting
