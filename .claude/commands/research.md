@@ -14,6 +14,18 @@ Use this command to conduct comprehensive SEO keyword research and competitive a
 
 ## Process
 
+### Strategy Context (load first)
+
+Before researching, load the AI Content Engine strategy layer from `marketing-engine/core/`:
+
+| File | Purpose |
+|------|---------|
+| `marketing-engine/core/ICPs.md` | Identify target ICP — align research to audience pain points, goals, and search behavior |
+| `marketing-engine/core/brand-voice.md` | Voice rules — inform angle development and positioning |
+| `marketing-engine/core/messaging-pillars.md` | Align research angles to narrative pillars |
+
+Use this context to inform keyword selection, competitive angles, and content planning that resonates with the target ICP.
+
 ### Keyword Research
 - **Primary Keyword**: Identify main target keyword for the topic
 - **Search Volume & Difficulty**: Research estimated monthly searches and competition level
@@ -32,8 +44,10 @@ Use this command to conduct comprehensive SEO keyword research and competitive a
 - **Domain Authority**: Note which competitors rank (indie blogs vs. major publications)
 
 ### Context Integration
+- **ICP Alignment**: Reference `marketing-engine/core/ICPs.md` to align topic with target audience pain points, goals, and buying behavior
+- **Pillar Alignment**: Map topic to a messaging pillar from `marketing-engine/core/messaging-pillars.md`
 - **your company Advantage**: How can your company product features naturally enhance this content?
-- **Brand Alignment**: Check @context/brand-voice.md for messaging fit
+- **Brand Alignment**: Check `marketing-engine/core/brand-voice.md` for ICP-specific messaging fit, and @context/brand-voice.md for general guidelines
 - **Existing Content**: Review @context/internal-links-map.md for related your company articles
 - **Target Keywords**: Cross-reference with @context/target-keywords.md priority list
 - **SEO Guidelines**: Ensure research aligns with @context/seo-guidelines.md requirements
@@ -55,10 +69,11 @@ Use this command to conduct comprehensive SEO keyword research and competitive a
 - **External Authority**: Identify 2-3 authoritative external sources to link
 
 ### Hook Development
-- **Introduction Angle**: Compelling way to open the article
-- **Value Proposition**: Clear benefit reader will get from article
+- **Introduction Angle**: Compelling way to open the article — reference `marketing-engine/core/hook-bank.md` for proven patterns matched to the target ICP
+- **Value Proposition**: Clear benefit reader will get from article (aligned to ICP goals from `marketing-engine/core/ICPs.md`)
 - **Contrarian Elements**: Any unexpected perspectives to explore
 - **Story Opportunities**: Real examples or case studies to feature
+- **Pillar Framing**: Apply the Pain + Fast Win + Authority formula from `marketing-engine/core/messaging-pillars.md`
 
 ## Output
 Provides a comprehensive research brief with:

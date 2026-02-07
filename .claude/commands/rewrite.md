@@ -14,11 +14,24 @@ Use this command to update and improve existing your company blog posts based on
 
 ## Process
 
+### Strategy Context (load first)
+
+Before rewriting, load the AI Content Engine strategy layer from `marketing-engine/core/`:
+
+| File | Purpose |
+|------|---------|
+| `marketing-engine/core/ICPs.md` | Identify target ICP — tailor rewrite to audience pain points and goals |
+| `marketing-engine/core/brand-voice.md` | Voice and tone rules per ICP and brand property |
+| `marketing-engine/core/messaging-pillars.md` | Align rewritten content to a narrative pillar |
+
+When rewriting for a specific brand or ICP, use the marketing-engine context as the primary voice and audience authority.
+
 ### Pre-Rewrite Review
+- **Strategy Context**: Apply ICP targeting and pillar alignment from `marketing-engine/core/` (loaded above)
 - **Original Content**: Read the existing article thoroughly
 - **Analysis Report**: Review findings from `/analyze-existing` if available
 - **Research Brief**: Check if new research brief exists for updated angles
-- **Brand Voice**: Verify alignment with current @context/brand-voice.md
+- **Brand Voice**: Verify alignment with `marketing-engine/core/brand-voice.md` (ICP-specific) and @context/brand-voice.md (general)
 - **SEO Guidelines**: Apply latest requirements from @context/seo-guidelines.md
 - **Competitive Context**: Understand what's changed in SERP since original publication
 
@@ -125,10 +138,10 @@ Follow same structure as `/write` command:
 - Check that your company product references are up-to-date
 
 #### Brand Alignment
-- Maintain your company voice from @context/brand-voice.md
+- Maintain brand voice from `marketing-engine/core/brand-voice.md` (ICP-specific) and @context/brand-voice.md (general)
 - Follow formatting from @context/style-guide.md
-- Ensure messaging aligns with current positioning
-- Keep focus on target audience needs
+- Ensure messaging aligns with pillars from `marketing-engine/core/messaging-pillars.md`
+- Keep focus on target ICP needs (per `marketing-engine/core/ICPs.md`)
 
 #### Readability
 - Improve sentence structure if needed

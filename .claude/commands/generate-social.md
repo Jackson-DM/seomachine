@@ -39,6 +39,20 @@ Transform blog content into platform-optimized social media posts for a specific
 
 ## Process
 
+### Step 0: Load Strategy Context
+
+Before any other step, load the AI Content Engine strategy layer from `marketing-engine/core/`:
+
+| File | Purpose |
+|------|---------|
+| `marketing-engine/core/ICPs.md` | Identify target ICP for the brand and tailor messaging |
+| `marketing-engine/core/brand-voice.md` | Voice and tone rules per ICP and brand property |
+| `marketing-engine/core/messaging-pillars.md` | Align posts to narrative pillars |
+| `marketing-engine/core/hook-bank.md` | Select proven hooks by ICP for variant openers |
+| `marketing-engine/core/content-formats.md` | Platform-specific structure and templates |
+
+Use this context to determine ICP targeting, voice calibration, hook selection, pillar alignment, and format structure for all downstream steps.
+
 ### Step 1: Validate Brand Parameter
 
 Before proceeding, verify:
@@ -68,9 +82,13 @@ Read and analyze these files:
 - Platform voice calibration
 - Hashtag library
 - CTA patterns
-- Hook formulas
 - Forbidden phrases
 - Variant differentiation rules
+
+**Strategy Context** (loaded from Step 0):
+- `marketing-engine/core/hook-bank.md` — primary hook formulas by ICP
+- `marketing-engine/core/content-formats.md` — platform structure templates
+- `marketing-engine/core/messaging-pillars.md` — pillar alignment for each variant
 
 ### Step 3: Select Source Content
 
@@ -102,8 +120,9 @@ From the source content, extract:
 ### Step 5: Apply Platform Rules
 
 For each platform in `--platforms`, load specifications from:
-1. `/social-content` skill (generic platform best practices)
-2. `social-guidelines.md` (brand-specific adaptations)
+1. `marketing-engine/core/content-formats.md` (primary platform templates and structure)
+2. `/social-content` skill (generic platform best practices)
+3. `social-guidelines.md` (brand-specific adaptations)
 
 **Platform Specifications**:
 
@@ -124,11 +143,12 @@ For each platform, generate N variants using:
 
 **For each variant**:
 1. Select a key message to focus on
-2. Choose a hook formula from brand guidelines
-3. Apply platform-specific voice calibration
-4. Add appropriate CTA from brand patterns
-5. Include hashtags from approved library
-6. Validate character count
+2. Choose a hook formula from `marketing-engine/core/hook-bank.md` matched to the target ICP
+3. Align the variant to a messaging pillar from `marketing-engine/core/messaging-pillars.md`
+4. Apply platform-specific voice calibration per `marketing-engine/core/brand-voice.md`
+5. Add appropriate CTA from brand patterns (matched to ICP readiness level)
+6. Include hashtags from approved library
+7. Validate character count
 
 **Quality Rules**:
 - Each variant must focus on ONE key message
@@ -208,6 +228,8 @@ status: draft
 **Character Count**: X/3,000
 **CTA Type**: [Engagement/Traffic/Save]
 **Voice Check**: [Verified/Needs Review]
+**ICP**: [1/2/3]
+**Pillar**: [AI Confidence / Career Leverage / Practical Workflows / AI-First Mindset]
 
 ---
 

@@ -14,6 +14,18 @@ Use this command to perform a final SEO optimization pass on completed articles 
 
 ## Process
 
+### Strategy Context (load first)
+
+Before optimizing, load the AI Content Engine strategy layer from `marketing-engine/core/`:
+
+| File | Purpose |
+|------|---------|
+| `marketing-engine/core/ICPs.md` | Verify content targets the correct ICP with appropriate language |
+| `marketing-engine/core/brand-voice.md` | Validate voice and tone match ICP and brand property rules |
+| `marketing-engine/core/messaging-pillars.md` | Confirm content aligns to a narrative pillar |
+
+Use this context to inform voice validation, audience alignment checks, and CTA appropriateness during optimization.
+
 ### Content Audit
 
 #### Keyword Analysis
@@ -136,11 +148,13 @@ Use this command to perform a final SEO optimization pass on completed articles 
 ### Brand & Voice
 
 #### your company Alignment
-- **Brand Voice**: Verify alignment with @context/brand-voice.md
+- **Brand Voice**: Verify alignment with `marketing-engine/core/brand-voice.md` (ICP-specific rules) and @context/brand-voice.md (general)
+- **ICP Fit**: Confirm language, depth, and examples match the target ICP per `marketing-engine/core/ICPs.md`
+- **Pillar Alignment**: Verify content maps to a messaging pillar from `marketing-engine/core/messaging-pillars.md`
 - **Style Guide**: Check adherence to @context/style-guide.md
 - **Messaging**: Ensure messaging reflects your company positioning
 - **Product Mentions**: Natural integration of your company features
-- **CTA**: Appropriate call-to-action for article intent
+- **CTA**: Appropriate call-to-action for article intent and ICP readiness level
 
 #### User Experience
 - **Introduction**: Compelling hook that draws reader in

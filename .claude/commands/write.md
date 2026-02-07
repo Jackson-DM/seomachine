@@ -14,9 +14,23 @@ Use this command to create comprehensive, SEO-optimized long-form blog content.
 
 ## Process
 
+### Strategy Context (load first)
+
+Before writing, load the AI Content Engine strategy layer from `marketing-engine/core/`:
+
+| File | Purpose |
+|------|---------|
+| `marketing-engine/core/ICPs.md` | Identify target ICP — tailor depth, language, and examples to audience |
+| `marketing-engine/core/brand-voice.md` | Voice and tone rules per ICP and brand property (takes precedence for ICP-specific content) |
+| `marketing-engine/core/messaging-pillars.md` | Align article to a narrative pillar and apply the Pain + Fast Win + Authority formula |
+| `marketing-engine/core/content-formats.md` | Blog post structure template and SEO article best practices |
+
+When writing for a specific brand or ICP, use the marketing-engine context as the primary voice and audience authority. The `@context/` files below provide supplementary guidelines.
+
 ### Pre-Writing Review
+- **Strategy Context**: Apply ICP targeting and pillar alignment from `marketing-engine/core/` (loaded above)
 - **Research Brief**: Review research brief from `/research` command if available
-- **Brand Voice**: Check @context/brand-voice.md for tone and messaging
+- **Brand Voice**: Check @context/brand-voice.md for tone and messaging (supplement with `marketing-engine/core/brand-voice.md` for ICP-specific rules)
 - **Writing Examples**: Study @context/writing-examples.md for style consistency
 - **Style Guide**: Follow formatting rules from @context/style-guide.md
 - **SEO Guidelines**: Apply requirements from @context/seo-guidelines.md
@@ -87,17 +101,18 @@ Use this command to create comprehensive, SEO-optimized long-form blog content.
 - Break up text with subheadings every 300-400 words
 
 ### Target Audience Focus
-- **Audience Perspective**: Write for your target audience (defined in @context/brand-voice.md)
-- **Practical Application**: Show how information applies to their specific challenges
+- **ICP Targeting**: Identify the target ICP from `marketing-engine/core/ICPs.md` and write to their pain points, goals, and vocabulary level
+- **Audience Perspective**: Write for your target audience (defined in @context/brand-voice.md, enriched by `marketing-engine/core/ICPs.md`)
+- **Practical Application**: Show how information applies to their specific challenges (per ICP goals and timelines)
 - **Product Integration**: Naturally mention how your features solve problems (reference @context/features.md)
 - **Industry Context**: Reference relevant trends and best practices
 - **Technical Accuracy**: Ensure terminology and processes are correct for your industry
 
 ### Brand Voice Consistency
-- Maintain your brand tone (reference @context/brand-voice.md for specifics)
+- Maintain your brand tone (reference `marketing-engine/core/brand-voice.md` for ICP-specific voice, @context/brand-voice.md for general guidelines)
 - Follow your established voice pillars
-- Use messaging framework from your context files
-- Apply terminology preferences consistently
+- Use messaging framework from `marketing-engine/core/messaging-pillars.md`
+- Apply terminology preferences per target ICP vocabulary rules
 - Match tone to content type (how-to, strategy, news, etc.)
 
 ## Output

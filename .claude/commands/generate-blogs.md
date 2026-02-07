@@ -33,6 +33,19 @@ Transform social content into blog mockups for a specific brand. This command ex
 
 ## Process
 
+### Step 0: Load Strategy Context
+
+Before any other step, load the AI Content Engine strategy layer from `marketing-engine/core/`:
+
+| File | Purpose |
+|------|---------|
+| `marketing-engine/core/ICPs.md` | Identify target ICP for the brand — tailor blog angle and audience |
+| `marketing-engine/core/brand-voice.md` | Voice and tone rules per ICP and brand property |
+| `marketing-engine/core/messaging-pillars.md` | Align blog topics to narrative pillars |
+| `marketing-engine/core/content-formats.md` | Blog post structure template and best practices |
+
+Use this context to determine ICP targeting, voice calibration, pillar alignment, and content structure for all downstream steps.
+
 ### Step 1: Validate Brand Parameter
 
 Before proceeding, verify:
@@ -58,6 +71,11 @@ Read and analyze these files:
 - Messaging framework and value propositions
 - Writing style guidelines
 - Target audience understanding
+
+**Strategy Context** (loaded from Step 0):
+- `marketing-engine/core/ICPs.md` — detailed ICP profile for audience targeting
+- `marketing-engine/core/brand-voice.md` — canonical voice rules (takes precedence for ICP-specific tone)
+- `marketing-engine/core/messaging-pillars.md` — pillar alignment for blog topic framing
 
 **Social Sources** (`@context/brands/{brand}/social-sources.md`):
 - Available social posts with engagement data
@@ -90,6 +108,8 @@ For each selected topic, create a **mockup** (NOT full content):
 ---
 type: blog-mockup
 brand: {brand}
+icp: {1/2/3}
+pillar: {AI Confidence / Career Leverage / Practical Workflows / AI-First Mindset}
 source_post: {post identifier from social-sources.md}
 generated: {YYYY-MM-DD}
 status: draft
@@ -163,12 +183,13 @@ status: draft
 
 ### Step 5: Apply Brand Voice
 
-Before finalizing each mockup, verify alignment with brand voice:
+Before finalizing each mockup, verify alignment with brand voice using `marketing-engine/core/brand-voice.md` as the primary authority:
 
-1. **Voice Check**: Does the proposed title and outline sound like this brand?
+1. **Voice Check**: Does the proposed title and outline match the ICP-specific voice from `marketing-engine/core/brand-voice.md`?
 2. **Tone Match**: Is the tone appropriate for the content type (educational, strategic, etc.)?
-3. **Message Alignment**: Do the proposed sections support core brand messages?
-4. **Audience Fit**: Will this resonate with the defined target audience?
+3. **Pillar Alignment**: Does the blog align to a messaging pillar from `marketing-engine/core/messaging-pillars.md`?
+4. **Message Alignment**: Do the proposed sections support core brand messages?
+5. **Audience Fit**: Will this resonate with the target ICP as defined in `marketing-engine/core/ICPs.md`?
 
 Use the `/brand-voice check` action to validate, adjust as needed.
 

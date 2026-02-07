@@ -43,6 +43,18 @@ Extract SEO-optimized FAQ content from blog mockups for a specific brand. This c
 
 ## Process
 
+### Step 0: Load Strategy Context
+
+Before any other step, load the AI Content Engine strategy layer from `marketing-engine/core/`:
+
+| File | Purpose |
+|------|---------|
+| `marketing-engine/core/ICPs.md` | Identify target ICP for the brand — tailor FAQ language and depth |
+| `marketing-engine/core/brand-voice.md` | Voice and tone rules per ICP and brand property |
+| `marketing-engine/core/messaging-pillars.md` | Align FAQ topics to narrative pillars |
+
+Use this context to determine audience-appropriate language, voice calibration, and topic framing for all downstream steps.
+
 ### Step 1: Validate Brand Parameter
 
 Before proceeding, verify:
@@ -59,7 +71,7 @@ If validation fails, provide a helpful error message:
 
 ### Step 2: Load Brand Context
 
-Read and analyze the brand voice file:
+Read and analyze the brand voice files:
 
 **Brand Voice** (`@context/brands/{brand}/brand-voice.md`):
 - Voice pillars and personality
@@ -67,6 +79,10 @@ Read and analyze the brand voice file:
 - Target audience understanding
 - Writing style guidelines
 - Forbidden phrases to avoid
+
+**Strategy Context** (loaded from Step 0):
+- `marketing-engine/core/ICPs.md` — detailed ICP profile for audience-appropriate language and jargon level
+- `marketing-engine/core/brand-voice.md` — canonical voice rules (takes precedence for ICP-specific tone)
 
 ### Step 3: Select Source Content
 
@@ -141,16 +157,17 @@ For each question, generate:
 
 ### Step 8: Apply Brand Voice Verification
 
-Use the `/brand-voice review` action to validate FAQ content:
+Use the `/brand-voice review` action to validate FAQ content, referencing `marketing-engine/core/brand-voice.md` as the primary voice authority:
 
-1. Do answers sound like this brand?
+1. Do answers match the ICP-specific voice from `marketing-engine/core/brand-voice.md`?
 2. Is the tone appropriate for FAQs (clear, helpful)?
 3. Are forbidden phrases avoided?
-4. Is technical jargon explained appropriately for the audience?
+4. Is technical jargon calibrated to the target ICP's vocabulary level (per `marketing-engine/core/ICPs.md`)?
 
-**Brand-Specific Considerations**:
-- **Amplify Intelligence**: Expert, consultative, outcome-focused answers
-- **Houston AI Club**: Warm, encouraging, community-focused answers
+**Brand-Specific Considerations** (from `marketing-engine/core/brand-voice.md`):
+- **Amplify Intelligence** (ICP 3): Expert, consultative, outcome-focused answers
+- **Houston AI Club** (ICP 1): Warm, encouraging, community-focused answers
+- **AI-First Work** (ICP 2): Professional, direct, results-oriented answers
 
 ### Step 9: Save Outputs
 
