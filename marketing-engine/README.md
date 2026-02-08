@@ -62,6 +62,36 @@ When the skill is active, Claude will:
 | `references/content-formats.md` | Templates for Reels, carousels, LinkedIn, YouTube, email, blog, newsletter + weekly calendar |
 | `references/brand-voice.md` | Tone, vocabulary, style rules per ICP and per brand property |
 
+## How Commands Should Consume the Marketing Engine
+
+Any command (e.g., `generate-super-variant`, `generate-social`) that needs strategy context should follow this pattern:
+
+### Strategy File Resolution
+For each strategy file, resolve in this order:
+1. **Brand-specific override** — `context/brands/<brand-slug>/<filename>` (e.g., `context/brands/houston-ai-club/brand-voice.md`)
+2. **Global default** — `marketing-engine/core/<filename>` (e.g., `marketing-engine/core/brand-voice.md`)
+
+### Core Strategy Files
+
+| File | Path | Purpose |
+|---|---|---|
+| ICP Profiles | `marketing-engine/core/ICPs.md` | Target audience profiles with demographics, psychographics, pain points |
+| Messaging Pillars | `marketing-engine/core/messaging-pillars.md` | Core pillars with ICP-specific expressions |
+| Hook Bank | `marketing-engine/core/hook-bank.md` | Proven hooks organized by ICP and category |
+| Content Formats | `marketing-engine/core/content-formats.md` | Templates for each platform and content type |
+| Brand Voice | `marketing-engine/core/brand-voice.md` | Tone, vocabulary, and style rules |
+
+### Graceful Failure
+If a strategy file is missing at both paths, commands must:
+- State which file is missing
+- State which fallback (if any) was used
+- Continue with reasonable defaults rather than failing silently
+
+### Output Conventions
+All generated content should be saved to `outputs/<command-type>/<brand-slug>/<YYYY-MM-DD>_<source-slug>.md`.
+
+---
+
 ## Tips for Best Results
 
 - **Be specific about the ICP** — "Write for ICP 2" or "targeting intermediate professionals" gives better results than a vague ask
